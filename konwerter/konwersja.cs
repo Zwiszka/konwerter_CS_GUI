@@ -7,7 +7,7 @@ namespace konwerter
     {
         void zamianaDlugosci()
         {
-            var x = int.Parse(textBox1.Text);
+            float x = float.Parse(textBox1.Text);
             float y = 0;
             switch (comboBox1.SelectedIndex)
             {
@@ -63,7 +63,7 @@ namespace konwerter
         }
         void zamianaMasy()
         {
-            var x = int.Parse(textBox1.Text);
+            float x = float.Parse(textBox1.Text);
             float y = 0;
             switch (comboBox1.SelectedIndex)
             {
@@ -119,7 +119,7 @@ namespace konwerter
         }
         void zamianaCzasu()
         {
-            var x = int.Parse(textBox1.Text);
+            float x = float.Parse(textBox1.Text);
             float y = 0;
             switch (comboBox1.SelectedIndex)
             {
@@ -173,8 +173,6 @@ namespace konwerter
                     break;
             }
         }
-
-
     }
 }
     

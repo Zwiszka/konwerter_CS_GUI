@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-
+  
 namespace konwerter
 {
     public partial class Form1 : Form
@@ -19,9 +19,15 @@ namespace konwerter
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
 
+            if (radioButton1.Checked)
+                zamianaDlugosci();
+            else if (radioButton2.Checked)
+                zamianaMasy();
+            else
+                zamianaCzasu();
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -39,6 +45,8 @@ namespace konwerter
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            comboBox1.ResetText();
+            comboBox2.ResetText();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox1.Items.Add("kilometr");
@@ -51,6 +59,8 @@ namespace konwerter
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            comboBox1.ResetText();
+            comboBox2.ResetText();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox1.Items.Add("kilogram");
@@ -63,6 +73,8 @@ namespace konwerter
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+            comboBox1.ResetText();
+            comboBox2.ResetText();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             comboBox1.Items.Add("godzina");
@@ -72,6 +84,19 @@ namespace konwerter
             comboBox2.Items.Add("minuta");
             comboBox2.Items.Add("sekunda");
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
-    
 }
