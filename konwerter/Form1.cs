@@ -46,34 +46,34 @@ namespace konwerter
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
-            comboBox1.Items.Add("kilometr");
-            comboBox1.Items.Add("metr");
-            comboBox1.Items.Add("centymetr");
-            comboBox2.Items.Add("kilometr");
-            comboBox2.Items.Add("metr");
-            comboBox2.Items.Add("centymetr");
+            string[] dlugosctab = { "kilometr", "metr", "centymetr" };
+            for (int i = 0; i < dlugosctab.Length; i++)
+            {
+                comboBox1.Items.Add(dlugosctab[i]);
+                comboBox2.Items.Add(dlugosctab[i]);
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
-            comboBox1.Items.Add("kilogram");
-            comboBox1.Items.Add("gram");
-            comboBox1.Items.Add("miligram");
-            comboBox2.Items.Add("kilogram");
-            comboBox2.Items.Add("gram");
-            comboBox2.Items.Add("miligram");
+            string[] masatab = { "kilogram", "gram", "miligram" };
+            for (int i = 0; i < masatab.Length; i++)
+            {
+                comboBox1.Items.Add(masatab[i]);
+                comboBox2.Items.Add(masatab[i]);
+            }
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
-            comboBox1.Items.Add("godzina");
-            comboBox1.Items.Add("minuta");
-            comboBox1.Items.Add("sekunda");
-            comboBox2.Items.Add("godzina");
-            comboBox2.Items.Add("minuta");
-            comboBox2.Items.Add("sekunda");
+            string[] czastab = { "godzina", "minuta", "sekunda" };
+            for (int i = 0; i < czastab.Length; i++)
+            {
+                comboBox1.Items.Add(czastab[i]);
+                comboBox2.Items.Add(czastab[i]);
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -94,6 +94,7 @@ namespace konwerter
             comboBox2.ResetText();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
+            label5.ResetText();
         }
     }
 }
