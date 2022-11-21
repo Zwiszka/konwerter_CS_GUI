@@ -45,10 +45,7 @@ namespace konwerter
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox1.ResetText();
-            comboBox2.ResetText();
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
+            czyszczenie();
             comboBox1.Items.Add("kilometr");
             comboBox1.Items.Add("metr");
             comboBox1.Items.Add("centymetr");
@@ -59,10 +56,7 @@ namespace konwerter
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox1.ResetText();
-            comboBox2.ResetText();
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
+            czyszczenie();
             comboBox1.Items.Add("kilogram");
             comboBox1.Items.Add("gram");
             comboBox1.Items.Add("miligram");
@@ -73,10 +67,7 @@ namespace konwerter
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            comboBox1.ResetText();
-            comboBox2.ResetText();
-            comboBox1.Items.Clear();
-            comboBox2.Items.Clear();
+            czyszczenie();
             comboBox1.Items.Add("godzina");
             comboBox1.Items.Add("minuta");
             comboBox1.Items.Add("sekunda");
@@ -92,11 +83,17 @@ namespace konwerter
                 e.Handled = true;
             }
 
-            // If you want, you can allow decimal (float) numbers
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
+        }
+        void czyszczenie()
+        {
+            comboBox1.ResetText();
+            comboBox2.ResetText();
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
         }
     }
 }
