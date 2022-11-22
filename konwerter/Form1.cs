@@ -21,9 +21,9 @@ namespace konwerter
         {
             
 
-            if (radioButton1.Checked)
+            if (dlugoscButton.Checked)
                 zamianaDlugosci();
-            else if (radioButton2.Checked)
+            else if (masaButton.Checked)
                 zamianaMasy();
             else
                 zamianaCzasu();
@@ -43,7 +43,7 @@ namespace konwerter
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void dlugoscButton_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
             string[] dlugosctab = { "kilometr", "metr", "centymetr" };
@@ -54,7 +54,7 @@ namespace konwerter
             }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void masaButton_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
             string[] masatab = { "kilogram", "gram", "miligram" };
@@ -65,7 +65,7 @@ namespace konwerter
             }
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        private void czasButton_CheckedChanged(object sender, EventArgs e)
         {
             czyszczenie();
             string[] czastab = { "godzina", "minuta", "sekunda" };
@@ -94,7 +94,7 @@ namespace konwerter
             comboBox2.ResetText();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            label5.ResetText();
+            wynik.ResetText();
         }
     }
 }

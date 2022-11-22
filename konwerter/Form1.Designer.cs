@@ -35,13 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.dlugoscButton = new System.Windows.Forms.RadioButton();
+            this.masaButton = new System.Windows.Forms.RadioButton();
+            this.czasButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.wynik = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,57 +115,50 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // textBox2
+            // dlugoscButton
             // 
-            this.textBox2.Location = new System.Drawing.Point(508, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 7;
+            this.dlugoscButton.AutoSize = true;
+            this.dlugoscButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.dlugoscButton.Location = new System.Drawing.Point(6, 21);
+            this.dlugoscButton.Name = "dlugoscButton";
+            this.dlugoscButton.Size = new System.Drawing.Size(91, 22);
+            this.dlugoscButton.TabIndex = 8;
+            this.dlugoscButton.TabStop = true;
+            this.dlugoscButton.Text = "Długość";
+            this.dlugoscButton.UseVisualStyleBackColor = true;
+            this.dlugoscButton.CheckedChanged += new System.EventHandler(this.dlugoscButton_CheckedChanged);
             // 
-            // radioButton1
+            // masaButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton1.Location = new System.Drawing.Point(6, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 22);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Długość";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.masaButton.AutoSize = true;
+            this.masaButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.masaButton.Location = new System.Drawing.Point(6, 47);
+            this.masaButton.Name = "masaButton";
+            this.masaButton.Size = new System.Drawing.Size(70, 22);
+            this.masaButton.TabIndex = 9;
+            this.masaButton.TabStop = true;
+            this.masaButton.Text = "Masa";
+            this.masaButton.UseVisualStyleBackColor = true;
+            this.masaButton.CheckedChanged += new System.EventHandler(this.masaButton_CheckedChanged);
             // 
-            // radioButton2
+            // czasButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton2.Location = new System.Drawing.Point(6, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 22);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Masa";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.radioButton3.Location = new System.Drawing.Point(6, 73);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(68, 22);
-            this.radioButton3.TabIndex = 10;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Czas";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.czasButton.AutoSize = true;
+            this.czasButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.czasButton.Location = new System.Drawing.Point(6, 73);
+            this.czasButton.Name = "czasButton";
+            this.czasButton.Size = new System.Drawing.Size(68, 22);
+            this.czasButton.TabIndex = 10;
+            this.czasButton.TabStop = true;
+            this.czasButton.Text = "Czas";
+            this.czasButton.UseVisualStyleBackColor = true;
+            this.czasButton.CheckedChanged += new System.EventHandler(this.czasButton_CheckedChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.dlugoscButton);
+            this.groupBox1.Controls.Add(this.czasButton);
+            this.groupBox1.Controls.Add(this.masaButton);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(53, 293);
@@ -188,16 +180,16 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Wynik= ";
             // 
-            // label5
+            // wynik
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(565, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 22);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "...";
+            this.wynik.AutoSize = true;
+            this.wynik.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wynik.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.wynik.Location = new System.Drawing.Point(565, 237);
+            this.wynik.Name = "wynik";
+            this.wynik.Size = new System.Drawing.Size(28, 22);
+            this.wynik.TabIndex = 13;
+            this.wynik.Text = "...";
             // 
             // Form1
             // 
@@ -205,10 +197,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(829, 450);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.wynik);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -234,13 +225,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton dlugoscButton;
+        private System.Windows.Forms.RadioButton masaButton;
+        private System.Windows.Forms.RadioButton czasButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label wynik;
     }
 }
 
